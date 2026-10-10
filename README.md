@@ -1,7 +1,5 @@
 # OCR Universal Project – Documentation
 
-> **Do you know how to read MARKDOWN file?** For all the Markdown files you can use VS Code shortcut `ctrl + shift + v` which will display the content nicely formated. Or you can use online tool to see Markdown.
-
 This project turns **scanned paper bird records** into structured data. It handles ringing sheets, retrap cards and daily sightings sheets.
 
 An AI model reads every scan and returns the content as JSON. The project's own **validators** then do four things:
