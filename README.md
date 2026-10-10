@@ -17,17 +17,17 @@ An AI model reads every scan and returns the content as JSON. The project's own 
 
 | Page | What it covers | Read it when… |
 |---|---|---|
-| [README.md](README.md) (this page) | Overview, how the pieces fit together, quick start, basic FAQ, key terms | you want the big picture |
-| [GETTING_STARTED.md](GETTING_STARTED.md) | Installation and your first complete run, step by step; a checklist for every new run | you are new, or you set up a new computer |
-| [CONFIGURATION.md](CONFIGURATION.md) | Every setting in `config.yaml`, `.env` and `prompts.yaml`: allowed values, defaults and what they do | you need to change a setting or don't understand one |
-| [SCRIPTS.md](SCRIPTS.md) | The main scripts: what they do, their modes, the files they write, typical workflows (retry failed images, re-validate for free, …) | you run the pipeline, or you wonder what a file in `data_output/` is |
-| [VALIDATORS.md](VALIDATORS.md) | The three built-in validators: every rule, every setting, the meaning of every review reason, the lexicon files | you read a review file or tune the validation rules |
-| [OLLAMA_LOCAL_MODELS.md](OLLAMA_LOCAL_MODELS.md) | Free local AI models with Ollama (on this computer or on a server over SSH). Covers finding and installing models, `glm_ocr_provider.py`, and adding a new local model | you want to work without a cloud provider |
-| [ADDING_PROVIDERS.md](ADDING_PROVIDERS.md) | Adding a new cloud AI provider, with a complete example for Claude | you want to use an AI service that is not built in |
-| [ADDING_VALIDATORS.md](ADDING_VALIDATORS.md) | Writing a validator for a new type of paper form | you want to digitise a new kind of document |
-| [EXTRA_TOOLS.md](EXTRA_TOOLS.md) | Helper scripts outside the main workflow: PDF → JPEG converter, JSONL → CSV converter, silent-error detector, Storm Petrel ring-range expander | you prepare scans or post-process results |
-| [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) | What every folder and file is for, and how the code fits together | you are looking for a file or want to change the code |
-| [TROUBLESHOOTING.md](TROUBLESHOOTING.md) | Error messages and their fixes, problem-file reasons, known limitations of the current code | something went wrong |
+| [README.md](docs_AI/README.md) (this page) | Overview, how the pieces fit together, quick start, basic FAQ, key terms | you want the big picture |
+| [GETTING_STARTED.md](docs_AI/GETTING_STARTED.md) | Installation and your first complete run, step by step; a checklist for every new run | you are new, or you set up a new computer |
+| [CONFIGURATION.md](docs_AI/CONFIGURATION.md) | Every setting in `config.yaml`, `.env` and `prompts.yaml`: allowed values, defaults and what they do | you need to change a setting or don't understand one |
+| [SCRIPTS.md](docs_AI/SCRIPTS.md) | The main scripts: what they do, their modes, the files they write, typical workflows (retry failed images, re-validate for free, …) | you run the pipeline, or you wonder what a file in `data_output/` is |
+| [VALIDATORS.md](docs_AI/VALIDATORS.md) | The three built-in validators: every rule, every setting, the meaning of every review reason, the lexicon files | you read a review file or tune the validation rules |
+| [OLLAMA_LOCAL_MODELS.md](docs_AI/OLLAMA_LOCAL_MODELS.md) | Free local AI models with Ollama (on this computer or on a server over SSH). Covers finding and installing models, `glm_ocr_provider.py`, and adding a new local model | you want to work without a cloud provider |
+| [ADDING_PROVIDERS.md](docs_AI/ADDING_PROVIDERS.md) | Adding a new cloud AI provider, with a complete example for Claude | you want to use an AI service that is not built in |
+| [ADDING_VALIDATORS.md](docs_AI/ADDING_VALIDATORS.md) | Writing a validator for a new type of paper form | you want to digitise a new kind of document |
+| [EXTRA_TOOLS.md](docs_AI/EXTRA_TOOLS.md) | Helper scripts outside the main workflow: PDF → JPEG converter, JSONL → CSV converter, silent-error detector, Storm Petrel ring-range expander | you prepare scans or post-process results |
+| [PROJECT_STRUCTURE.md](docs_AI/PROJECT_STRUCTURE.md) | What every folder and file is for, and how the code fits together | you are looking for a file or want to change the code |
+| [TROUBLESHOOTING.md](docs_AI/TROUBLESHOOTING.md) | Error messages and their fixes, problem-file reasons, known limitations of the current code | something went wrong |
 | `README_Jonas.txt` | The author's short personal notes (a quick start in note form); may be less up to date than these pages | you want a very short summary |
 
 ---
