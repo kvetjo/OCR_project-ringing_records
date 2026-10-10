@@ -1,0 +1,43 @@
+# Runtime dependencies of the OCR pipeline and of the helper scripts in extra_tools/.
+# Install with:  pip install -r requirements.txt
+#
+# Version rule: ">=" is the version the code was tested with, "<" stops pip from
+# jumping to the next MAJOR version, which may contain breaking changes.
+# Newer releases inside the same major version are still installed.
+# Python 3.11 or newer is required.
+
+# --- core ---
+PyYAML>=6.0,<7
+requests>=2.32,<3
+
+# --- AI providers ---
+google-genai>=1.52,<2       # Gemini provider (tested with 1.x; 2.x is not tested)
+openai>=2.8,<3              # OpenAI provider (tested with 2.x; 3.x is not tested)
+
+# --- validators ---
+rapidfuzz>=3.14,<4          # species / location matching
+
+# --- image storage ---
+boto3>=1.42,<2              # Cloudflare R2 (S3 compatible listing); also used by extra_tools/convertor_PDF_to_JPEG.py
+
+# --- local models ---
+# Only needed for active_provider "ollama-ssh", which reaches a remote Ollama
+# server through an SSH tunnel. Plain "ollama" (this machine) needs nothing
+# extra - it talks to the HTTP API with requests.
+paramiko>=3.5,<6
+
+# --- extra_tools: silent-error detector ---
+pandas>=2.3,<3              # tested with 2.x; 3.x is not tested
+matplotlib>=3.11,<4         # charts (silent_errors_plots.py)
+numpy>=2.0,<3
+
+# --- extra_tools: PDF -> JPEG converter (convertor_PDF_to_JPEG.py) ---
+# pdf2image also needs Poppler, a program that pip cannot install:
+# Windows - download Poppler and set POPPLER_PATH in the script; Linux/macOS - see
+# https://github.com/Belval/pdf2image
+pypdf>=6.7,<7
+pdf2image>=1.17,<2
+
+# --- platform ---
+# zoneinfo needs the IANA time zone database, which Windows does not ship.
+tzdata>=2025.2 ; sys_platform == "win32"

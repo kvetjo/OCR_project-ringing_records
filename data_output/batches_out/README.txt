@@ -1,0 +1,1 @@
+Folder for generating batch files. Those are used by script and AI providers.

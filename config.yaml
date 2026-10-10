@@ -1,0 +1,243 @@
+# ==========================================
+# MAIN RUN SETTINGS (What is currently being executed)
+# ==========================================
+run_settings:
+  # active_provider: "gemini"               # openai | gemini | ollama | ollama-ssh
+  #
+  # "ollama"     - a local model on THIS machine
+  # "ollama-ssh" - a local model on a remote machine, reached over SSH (..not tested properly..)
+  # Both read their connection, their model -> provider mapping and their
+  # defaults from config-ollama.yaml, ignore the whole batch_generation section
+  # below (there is no upload and no batch job), and write the finished batch
+  # straight into directories.raw_dir_base. No api_keys entry is needed.
+  # model_name: "gemini-3.1-pro-preview"    #"gemini-3.1-pro-preview" #"gpt-5.5-2026-04-23"   # Specific model version
+  active_provider: "gemini"               # openai | gemini | ollama | ollama-ssh
+  model_name: "gemini-3.1-pro-preview"
+  active_prompt_key: "PROMPT_4"           # Which prompt to load from prompts.yaml
+  prompts_file_path: "prompts.yaml"       # Where the prompt definitions are located
+
+  #PROMPT_1 = handwritten species names in form (for old sheets)
+  #PROMPT_2 = pre-printed species names in form (for newer sheets)
+  #PROMPT_3 = handwritten species names in form BUT WITH CONFIDENCE LEVEL (not good to use)
+  #PROMPT_4 = ringing sheets
+  #PROMPT_5 = retrap sheets
+  #PROMPT_6 = allowed_values - test
+
+  # ------------------------------------------------------------------
+  # NAME OF THIS RUN / DATASET - change it HERE ONLY.
+  # It is written into every value below that contains {run_name}:
+  #   directories.output_dir_base, directories.batch_out_dir,
+  #   directories.name_suffix, batch_generation.output_prefix
+  # If you want to name something by hand, just delete {run_name} from that
+  # one value and write whatever you need - nothing else changes.
+  # ------------------------------------------------------------------
+  run_name: "ringing-subalpine_warblers-8-test"
+
+
+
+# ==========================================
+# API KEYS
+# ==========================================
+# The real values live in the .env file (git-ignored). The ${VAR} placeholders
+# below are resolved when the config is loaded. See .env.example.
+api_keys:
+  openai: "${OPENAI_API_KEY}"    #stored in .env file
+  gemini: "${GEMINI_API_KEY}"    #stored in .env file
+
+# ==========================================
+# IMAGE MANAGEMENT (Storage adapters)
+# ==========================================
+image_management:
+  active_adapter: "local"             # cloudflare | local | 
+  local_root: "C:\\Users\\jonas.kvet\\Desktop\\Subalpine_warbler\\ringing"   # Root directory for local adapter - must follow the same structure as cloudflare = batches_X/page_X.jpg (.pdf)
+                                                                             # Windows path has to have dobled back-slashes ( C:\\this\\is\\path )
+  # Cloudflare R2 settings (used when active_adapter is "cloudflare")
+  cloudflare:
+    r2_endpoint_url: ""
+    r2_access_key_id: "${R2_ACCESS_KEY_ID}"           # value comes from .env
+    r2_secret_access_key: "${R2_SECRET_ACCESS_KEY}"   # value comes from .env
+    r2_bucket_name: "blm-ringing-retrap" #"blm-ringing-retrap"    "blm-ocr"
+    r2_base_path: "ringing/"                    # <-- path to the place where batches starts. Leave "" for root | retrap/ | ringing/
+    public_base_url: "" #https://pub-<id>.r2.dev/ 
+
+# ==========================================
+# DIRECTORIES AND FILES (Base paths)
+# ==========================================
+# {run_name} is filled in from run_settings.run_name (see the top of this file).
+directories:
+  state_dir_base: "data_output/state"                            # Where state is stored (active batches, pending tasks, etc.)
+  output_dir_base: "data_output/output/{run_name}"               # Where downloaded results will be saved (script will create provider subfolders here)
+  batch_out_dir: "data_output/batches_out/{run_name}"            # Where generated .jsonl batch files are stored before sending
+  name_suffix: "-{run_name}"                                     # Suffix appended to all result file names
+  processed_log_file: "processed_items.txt"
+  raw_dir_base: "data_output/raw"
+
+# ==========================================
+# BATCH CREATION AND SUBMISSION (make_OCR_batch.py)
+# ==========================================
+batch_generation:
+  output_prefix: "batch-{run_name}"
+  image_upload_method: "file_api"         # base64 | file_api | pass_a_url (file_api for gemini and openai, base64 for gemini and openai, pass_a_url for openai only)
+  batch_operation_mode: "generate_and_upload"        # generate | upload | generate_and_upload | try_again_upload
+  upload_files: []                        # List of filenames to upload when mode is 'upload' or 'try_again_upload' (e.g., ["batch_0001.jsonl", "batch_0002.jsonl"])
+                                          # For 'try_again_upload': specify original batch filenames to retry (searches in batches_out and subdirectories) --> mode = explicit --> select problematic ids in explicit
+                                          # Written out in full on purpose - here you often point at an OLDER batch, not the current run.
+                                          # ({run_name} would work here too if you ever want it.)
+  limits:
+    max_lines: 50000
+    max_jsonl_bytes: 209715200            # 200 * 1024 * 1024 (YAML does not evaluate math expressions, must be an exact integer)
+    safety_factor: 0.90
+
+# ==========================================
+# FILTERING AND INPUTS
+
+# Decide what you want to process - all images | specified batches | explicit list
+# all | batches | explicit
+# if you choose explicit then specify in ALLOWED_IMAGES
+# ==========================================
+processing:
+  mode: "explicit"                         # all | batches | explicit
+
+  #mode = batches
+  allowed_batches: ["batch_10"]
+  #["batch_48", "batch_49", "batch_50", "batch_51", "batch_52", "batch_53", "batch_54"]
+
+
+  #mode = explicit  OR     mode = explicit & batch_operation_mode: "try_again_upload"
+  allowed_images: ["img_7_1", "img_7_2", "img_7_3", "img_7_4", "img_7_5", "img_7_6", "img_7_7", "img_7_8"]
+  #allowed_images: ["img_1_10", "img_1_14", "img_1_16", "img_1_18", "img_1_21", "img_1_22", "img_1_4"]
+
+  # these are allowd formats. But for AI OCR is better to use .jpg, .jpeg, .png --> skip .webp or .pdf
+  image_extensions:
+    - ".jpg"
+    - ".jpeg"
+    - ".png"
+    - ".webp"
+    - ".pdf"
+
+  # Naming convention used to read batch_id and page_id out of the image path,
+  # e.g. ".../batch_3/page_12.jpg" -> batch_id "3", page_id "12".
+  # Every part of the path is tested and the LAST capturing group of the
+  # pattern holds the id. The request id itself stays "img_<batch>_<page>".
+  path_parsing:
+    batch_pattern: '(batch|davka)[_\-](.+)'   # always use simple '' NOT double ""
+    page_pattern: 'page[_\-](.+)'             # always use simple '' NOT double ""
+
+
+
+
+# ==========================================
+# VALIDATION AND ENRICHMENT
+# ==========================================
+validation:
+  active_validator: "ocr_ringing"          # ocr_sightings | ocr_ringing | ocr_retrap | ocr_ringing-STORM_PETREL
+  locations_lexicon_path: ""
+  species_lexicon_path: ""
+  serial_lexicon_path: ""
+  #species_lexicon_path: "C:\\Birdlife_projects\\OCR_chatGPT_batch\\mbs_all_species.csv"
+  
+  # Specific rules for the 'ocr_sightings' validator
+  ocr_sightings:
+    deduplicate_review: true  #This is Bob --> post process 
+    rules:
+      date_validation: true
+      duplicate_species_in_record: true
+      low_match_score: true
+      name_without_number: true
+      number_has_illegal_chars: true
+      suspicious_number_rule: true
+      rare_species_E: true
+      exceeds_monthly_max: true
+      sudden_change: true             # sudden_change --> it checks if there was change is observed number of bird species (2, 2, 2, 42, 2 => 42 will be flagged)
+
+    sudden_change_config:           # ← optional, these are the default values #
+        window_days: 7               # how many days before/after are used as context
+        min_required_days: 4
+        max_gap_days: 2              # a larger gap resets the series
+        min_ratio: 3                 # the spike must be ≥ 3× the surrounding median
+        min_absolute_diff: 6         # and at the same time the absolute difference must be ≥ 3
+        volatility: 0.46              # the bigger number the more volatility - it allows bigger chaos
+        verbose: true                # Described with details in reason AND more printing
+
+
+
+
+  ocr_ringing:
+  #ocr_ringing-STORM_PETREL:
+    verbose: true
+    species_match_threshold: 80   # Minimální skóre rapidfuzz pro napárování druhu (0–100)
+    location_match_threshold: 85
+
+    # Relative tolerance in wing and weight range: 0.10 = ±10 %
+    measurement_tolerance: 0.05 #±X to wing_range and weight_range
+
+    backfill_species: "Subalpine Warbler"          # AUTO | "Moorhen" | false (default)    #for missing names on other side of scan - it will take a name from first side of the scan
+
+
+    ring_no_mode: "AUTO"                            # "AUTO" or "MANUAL"    (auto = automatic detection of most common regex)
+    ring_no_manual_regex: '^[A-Za-z0-9]+\.\d{3}$'          # Regex (always use simple '' NOT double "") - for MANUAL regex
+                            
+    #copying values from main rows 
+    carry_over_settings:
+      prefix_keys: ["ring_no"]
+      ring_no_max_suffix_length: 3          #number|null|0   --->  Defines the maximum character count to treat a value as an incomplete suffix requiring auto-completion (0 or null disables). 
+
+      carry_over_keys: ["date", "place", "initials", "time", "serial"]  #these data are copied from line above (a person who wrote down data in sheet was lazy to re-write it for every row/line)
+      
+      # assumed_keys --> it split value into "written" and "assumed" keys in json - based on if the value is really written in line or if value is copied from above line where it was actuanlly written
+      assumed_keys: ["age"]                                             
+      
+    rules:
+      serial_validation: true
+      serial_validation-simple: true
+      ring_no_validation: true
+      low_match_score: true    # Napárovat druh přes rapidfuzz na lexikon
+      wing_range: true       # Kontrola délky křídla dle lexikonu ± tolerance
+      weight_range: true     # Kontrola hmotnosti dle lexikonu ± tolerance
+      23_rows: true
+      age_validation: true
+      date_validation: true
+      sex_validation: true
+      default_first_row_check: true     # first row of every scan always goes to review
+      ring_no_continuity_check: true    # true (both) | false | "prefix" | "suffix"      #12.711 --> 12.712
+      # ring_no_cuntinuity_check   -->   compares the first ring_no of a scan with the last ring_no of the previous scan
+  
+  ocr_retrap:
+    verbose: true
+    species_match_threshold: 80
+    location_match_threshold: 85
+    measurement_tolerance: 0.05
+
+    #RETRAP
+    ring_no_mode: "MANUAL"                                      # "AUTO" or "MANUAL"    (auto = some rules in the background; manual = regex bellow is used)
+    ring_no_manual_regex: '^[A-Za-z0-9]+(?:\.\d{3})?$'          # Regex (always use simple '' NOT double "") - for MANUAL regex
+    #ring_no_manual_regex: '^\.\d{3}$' 
+
+    rules:
+      species_match: true    # Napárování druhu na lexikon (dříve zapnuto natvrdo v kódu)
+      location_match: true
+      low_match_score: true
+      wing_range: true       # Kontrola délky křídla dle lexikonu ± tolerance
+      weight_range: true     # Kontrola hmotnosti dle lexikonu ± tolerance
+      age_validation: true
+      date_validation: true
+      ring_no_validation: true
+
+
+
+# ==========================================
+# AI evaluation of whole dataset - OPTIONAL
+# ==========================================
+
+# price for ai post evaluation can be sometimes 1/2 of cost for complete OCR (280 records was 6.5 USD)
+ai_post_eval:
+  turn_on: True
+  for_validators: ["ocr_ringing"] 
+  choose_provider: local_no_ai                           #local_no_ai/gemini/openai --> for gemini there is a bug on Google side. Wait till they fix it the use Gemini (this is a different API then OCR). Ollama in not implemented (would not make sense to use it)
+  
+  active_prompt_key: "PROMPT_RINGING_POST_AI_EVAL"  # Which prompt to load from prompts.yaml - should be different for jsonl and CSV
+  prompts_file_path: ''   # it is different prompts.yaml then which is used for OCR
+  output_path: '' #None --> output_path says wheater to save output file and where OR not save (None,null). If not saved then it must be included in review - see bellow
+  append_to_existing_review_file: True              #this will edit review file - it will append new flags to existing review file 
+
+  #more settings is inside "ai_post_evaluation" files (like models, container size, reasoning)

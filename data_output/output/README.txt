@@ -1,0 +1,1 @@
+Folder used for real and final results. Files in JSON. Contains results but also review file (with flagged cases)

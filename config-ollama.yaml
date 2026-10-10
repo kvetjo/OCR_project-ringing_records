@@ -1,0 +1,114 @@
+# ==========================================
+# OLLAMA - CONNECTION, MODEL PROVIDERS, DEFAULTS
+# ==========================================
+# This file is read ONLY when config.yaml has:
+#
+#   run_settings:
+#     active_provider: "ollama"       -> Ollama runs on THIS machine  (section 'local')
+#     active_provider: "ollama-ssh"   -> Ollama runs on a remote host (section 'ssh')
+#
+# Nothing here affects gemini / openai runs.
+#
+# Ollama has no batch API. make_OCR_batch.py processes the images one by one and
+# writes the finished "batch" straight into directories.raw_dir_base, from where
+# get_OCR_results.py picks it up. The whole batch_generation section of
+# config.yaml (image_upload_method, batch_operation_mode, upload_files, limits)
+# is therefore IGNORED - images are always sent as inline base64.
+# ==========================================
+
+
+# ==========================================
+# CONNECTION: active_provider "ollama"
+# ==========================================
+local:
+  scheme: "http"
+  host: "localhost"
+  port: 11434
+
+
+# ==========================================
+# CONNECTION: active_provider "ollama-ssh"
+# ==========================================
+# An SSH tunnel is opened with paramiko and the HTTP API is reached through
+# 127.0.0.1:<local_bind_port>. Set this up once per server and forget about it.
+ssh:
+  host: ""
+  port: 22
+  username: "user"
+
+  # Use EITHER password OR key_path, not both.
+  password: null
+  key_path: null                    # e.g. "C:\\Users\\jonas.kvet\\.ssh\\id_ed25519"   (double backslashes, like local_root in config.yaml)
+  key_passphrase: null
+
+  connect_timeout: 20
+
+  # Where Ollama listens ON THE REMOTE MACHINE
+  remote_ollama_host: ""
+  remote_ollama_port: 11434
+
+  # Local end of the tunnel (0 = pick a free port automatically)
+  local_bind_host: ""
+  local_bind_port: 0
+
+
+# ==========================================
+# MODEL -> PROVIDER MODULE
+# ==========================================
+# Left side : EXACTLY what is written in config.yaml -> run_settings.model_name
+# Right side: module name inside ai_providers/ (without the .py)
+#
+# The module holds everything specific to that one model: its prompt, its Ollama
+# options and postprocess_output(), which turns the model's raw answer into the
+# JSON the validator expects.
+#
+# Nothing is guessed here. A model that is not listed still runs, but its output
+# is written to the raw file unchanged (base_ollama defaults) and a [WARN] is
+# printed listing the installed models and the available provider modules.
+model_providers:
+  "glm-ocr": "glm_ocr_provider"
+  "glm-ocr:latest": "glm_ocr_provider"
+  #"benhaotang/Nanonets-OCR2-3B:latest": "nanonets_ocr_provider"
+
+
+# ==========================================
+# DEFAULTS
+# ==========================================
+# Priority, strongest first:
+#   1. constant in the model provider module (e.g. OCR_PROMPT in glm_ocr_provider.py)
+#   2. this section
+#   3. hard-coded fallback in ai_providers/base_ollama.py
+# A constant that is missing or set to None in the model provider drops to 2.
+defaults:
+  # null  -> build the prompt from prompts.yaml using run_settings.active_prompt_key
+  #          (system_prompt goes to Ollama as "system", user_prompt as "prompt")
+  # string-> send this text as the prompt and ignore prompts.yaml completely
+  ocr_prompt: null
+
+  ollama_options:                   # passed to Ollama as "options"
+    temperature: 0
+    num_ctx: 8192
+
+  ollama_format: null               # null | "json" | JSON schema (mapping)
+  keep_alive: "5m"                  # how long the model stays loaded in RAM/VRAM
+  request_timeout: 600              # seconds per image
+  max_retries: 2                    # extra attempts after a failed request
+  retry_delay: 5                    # seconds between attempts
+  check_vision_capability: true     # warn when the model reports no vision support
+
+
+# ==========================================
+# HOW THE LOCAL BATCH IS WRITTEN
+# ==========================================
+run:
+  # batch_id = "<batch_id_prefix>-<uuid4 hex>", e.g. ollama-a3f2b1c4d5e6...
+  batch_id_prefix: "ollama"
+
+  # Keep the untouched model answer next to the postprocessed text. Costs disk
+  # space but lets you see what the model really said.
+  save_raw_response: true
+
+  # null       -> start a new batch with a fresh uuid
+  # "ollama-.."-> append to that existing raw file and skip the custom_ids that
+  #               are already in it (use this after an interrupted run)
+  resume_batch_id: null

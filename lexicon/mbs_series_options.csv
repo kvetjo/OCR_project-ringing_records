@@ -1,0 +1,230 @@
+bird_name,spc_euringCode,series_options
+Allen's Gallinule,4250,EE
+Alpine Swift,7980,SS
+Aquatic Warbler,12420,NULL
+Arctic Warbler,12950,4F; 5E
+Audouin's Gull,5880,FF; FS
+Baillon's Crake,4110,C; CC; CX; DS
+Bar-tailed Godwit,5340,W
+Barn Owl,7350,GG
+Barn Swallow,9920,NULL
+Barred Warbler,12730,B; NULL
+Black Kite,2380,GG
+Black Redstart,11210,NULL
+Black Tailed Godwit,5320,EE
+Black Tern,6270,BV; SV
+Black-Eared Wheatear,11480,NULL
+Black-Necked Grebe,120,FF
+Black-headed Gull,5820,EE
+Black-winged Stilt,4550,EE
+Blackbird,11870,CC; CX
+Blackcap,12770,NULL
+Blue Rock Thrush,11660,CC; CX
+Blue Tit,14620,37P; NULL
+Bluethroat,11060,NULL
+Blyth's Reed Warbler,12480,NULL
+Bonelli's Warbler Sp.,13070,2F; 3F; 5F; 6F; 8F; 9F
+Brambling,16380,NULL
+Caspian Gull,5927,GG
+Cattle Egret,1110,FF; FS; GG
+Cetti's Warbler,12200,NULL
+Chukar,3550,FF
+Citrine Wagtail,10180,NULL
+Collared Dove,6840,EE
+Collared Flycatcher,13480,NULL
+Common Chaffinch,16360,B; NULL
+Common Chiffchaff,13110,A; 0F; 0H; 0N; 10P; 11P; 12P; 13P; 14P; 15P; 16P; 17P; 18P; 19P; 1B; 1E; 1F; 1H; 1N; 1P; 20P; 21P; 22P; 23P; 24P; 25P; 26P; 27P; 28P; 29P; 2B; 2F; 2H; 2N; 2P; 30P; 31P; 32P; 33P; 34P; 35P; 36P; 37P; 38P; 39P; 3B; 3F; 3H; 3N; 3P; 40P; 41P; 42P; 43P; 44P; 45P; 46P; 47P; 48P; 49P; 4F; 4H; 4N; 4P; 50P; 51P; 52P; 53P; 54P; 55P; 58P; 5B; 5E; 5F; 5H; 5N; 5P; 60P; 61P; 62P; 63P; 64P; 65P; 66P; 67P; 68P; 69P; 6F; 6H; 6N; 6P; 6R; 70P; 71P; 72P; 73P; 74P; 75P; 76P; 77P; 78P; 79P; 7E; 7F; 7H; 7N; 7P; 80P; 84P; 85P; 87P; 88P; 8B; 8E; 8F; 8H; 8N; 8P; 9A; 9B; 9E; 9F; 9H; 9N; 9P; IH; NULL; ON
+Common Coot,4290,GG
+Common Crossbill,16660,BV
+Common Cuckoo,7240,DD
+Common Kestrel,3040,EE
+Common Kingfisher,8310,SA; SB; SS
+Common Quail,3700,CX
+Common Redshank,5460,C; D; DK; DN; SV; SX; XR; XS
+Common Redstart,11220,KP; NULL
+Common Ringed Plover,4700,BV
+Common Rosefinch,16790,B; NULL
+Common Sandpiper,5560,BV
+Common Snipe,5190,BV; C; CC; CX; DN; SV; SX; XR; XS
+Common Starling,15820,CC; CX
+Common Stonechat,11390,NULL
+Common Swift,7950,SB; SS
+Common Whitethroat,12750,NULL
+Corn Bunting,18820,B; BV
+Corn Crake,4210,DD
+Curlew Sandpiper,5090,BV
+Dartford Warbler,12620,NULL
+Dotterel,4820,C; CX
+Dunlin,5120,BB; BV; NR; NS; NT
+Dunnock,10840,NULL
+Dusky Warbler,13030,29P; 35P; 36P; 3H; 51P; 5P; 61P; 6F; 6P; 7H
+Eastern Bonelli's Warbler,13072,13P; 14P; 1N; 1P; 20P; 23P; 24P; 2F; 2H; 2N; 30P; 34P; 35P; 37P; 38P; 3P; 41P; 42P; 43P; 44P; 45P; 46P; 49P; 4F; 4H; 4N; 4P; 54P; 5F; 5H; 5N; 5P; 62P; 63P; 64P; 65P; 66P; 67P; 68P; 69P; 6F; 6H; 6N; 75P; 79P; 7H; 7N; 84P; 87P; 8H; 8P; 9F; 9P
+Eastern Olivaceous Warbler,12550,NULL
+Eleonora's Falcon,3110,FF
+Eurasian Jay,15390,D
+Eurasian Scops Owl,7390,EE
+Eurasian Sparrowhawk,2690,EE
+European Bee-Eater,8400,CC; CX; SB; SS
+European Golden Plover,4850,D
+European Honey Buzzard,2310,GG
+European Nightjar,7780,CC; CX
+European Roller,8410,DD; EE
+European Serin,16400,0N; 13P; 1F; 21P; 2N; 33P; 38P; 41P; 46P; 47P; 50P; 51P; 52P; 62P; 69P; 9N; NULL
+European Storm Petrel,520,NULL; S
+Eye-browed Thrush,11950,CC
+Fieldfare,11980,CX
+Firecrest,13150,0H; 0N; 10P; 11P; 12P; 13P; 14P; 15P; 16P; 17P; 18P; 1F; 1H; 1N; 1P; 20P; 21P; 22P; 23P; 24P; 25P; 26P; 27P; 28P; 29P; 2F; 2H; 2N; 2P; 30P; 31P; 32P; 33P; 34P; 35P; 36P; 37P; 38P; 39P; 3B; 3H; 3P; 40P; 43P; 46P; 47P; 48P; 49P; 4H; 4N; 4P; 51P; 53P; 5B; 5E; 5F; 5H; 5N; 60P; 62P; 63P; 65P; 67P; 68P; 69P; 6F; 6H; 6N; 6P; 71P; 72P; 74P; 76P; 77P; 7E; 7F; 7H; 7N; 84P; 87P; 8B; 8F; 8H; 8N; 8P; 9F; 9H; 9N; 9P; NULL
+Garden Warbler,12760,NULL
+Garganey,1910,EE
+Goldcrest,13140,0H; 0N; 10P; 13P; 14P; 15P; 16P; 18P; 19P; 1H; 1N; 1P; 20P; 21P; 23P; 24P; 26P; 27P; 28P; 29P; 2F; 2N; 2P; 30P; 31P; 32P; 33P; 34P; 35P; 36P; 37P; 38P; 3B; 40P; 41P; 43P; 46P; 47P; 48P; 4H; 4N; 51P; 5F; 5N; 5P; 60P; 61P; 62P; 63P; 65P; 67P; 68P; 6F; 6H; 6N; 6P; 70P; 71P; 72P; 73P; 74P; 75P; 76P; 77P; 78P; 79P; 7F; 7H; 7N; 84P; 85P; 87P; 8E; 8F; 8P; 9H; 9N; 9P; NULL
+Golden Oriole,15080,CC; CX
+Goldfinch,16530,NULL
+Grasshopper Warbler,12360,NULL
+Great Bittern,950,GG; NULL
+Great Cormorant,720,L
+Great Crested Grebe,90,FF
+Great Grey Shrike,15200,CC; CX
+Great Reed Warbler,12530,B; BV
+Great Snipe,5200,CX; DB; DK
+Great Spotted Cuckoo,7160,EE
+Great Tit,14640,B; NULL
+Greater Flamingo,1470,C; E; L
+Green Sandpiper,5530,BV; C
+Greenfinch,16490,B; BV
+Greenish  Warbler,12930,3H
+Greenshank,5480,D; DB; DD; DK
+Grey Heron,1220,G; GG; J
+Grey Plover,4860,DB
+Grey Wagtail,10190,NULL; KA
+Hawfinch,17170,BB; BV
+Hobby,3100,EE
+Hoopoe,8460,CC; CX
+House Martin,10010,NULL
+Hume's Leaf Warbler,13002,47P
+Hybrid barn swallow x House Martin,90100,NULL
+Iberian Chiffchaff,13115,67P
+Icterine Warbler,12590,NULL
+Isabelline Wheatear,11440,B; NULL
+Jack Snipe,5180,BV
+Kentish Plover,4770,NR; NS
+Laughing Dove,6900,OE
+Lesser Black-backed Gull,5910,GG
+Lesser Grey Shrike,15190,BV
+Lesser Kestrel,3030,D; DD; EE
+Lesser Whitethroat,12740,NULL
+Linnet,16600,NULL
+Little Bittern,980,EE
+Little Bunting,18740,NULL
+Little Crake,4100,5V; CC; CX; SV; SX
+Little Egret,1190,FF; GG
+Little Grebe,70,EE
+Little Ringed Plover,4690,BB; BV; NR; NS; NT
+Little Stint,5010,S
+Long-eared Owl,7670,GG
+Mallard,1860,GG
+Marbled Teal,1950,EE; FF
+Marmora's Warbler,12610,NULL
+Marsh Harrier,2600,FF; GG
+Marsh Sandpiper,5470,BV
+Marsh Warbler,12500,NULL
+Meadow Pipit,10110,NULL
+Mediterranean Gull,5750,EE
+Melodious Warbler,12600,NULL
+Menetries's  Warbler,12660,NULL
+Merlin,3090,DD; EE
+Moltoni's Warbler,12652,NULL
+Montagu's Harrier,2630,EE; FF
+Moorhen,4240,EE; FF; FS
+Moussier's Redstart,11270,NULL
+Moustached Warbler,12410,NULL
+Night Heron,1040,FF
+Northern Lapwing,4930,D
+Northern Wheatear,11460,B; NULL
+Olive Backed Pipit,10080,NULL
+Ortolan Bunting,18660,NULL
+Paddyfield Warbler,12470,NULL
+Pallas's Leaf Warbler,12980,15P; 30P; 51P; 72P; 77P
+Pallid Harrier,2620,EE; FF
+Pallid Swift,7960,SB; SS
+Penduline Tit,14900,NULL
+Pied Flycatcher,13490,NULL
+Pine Bunting,18560,B
+Pintail,1890,FF
+Purple Heron,1240,J; NULL
+Radde's Warbler,13010,NULL
+Red-Backed Shrike,15150,B; BV
+Red-Breasted Flycatcher,13430,0N; 15P; 18P; 1F; 1H; 26P; 27P; 28P; 29P; 2F; 2N; 2P; 32P; 37P; 38P; 3B; 3N; 44P; 48P; 4N; 50P; 51P; 53P; 5H; 5N; 6F; 6N; 6P; 7F; 7H; 7P; 8F; 8H; 8N; 9F; 9H; 9P; NULL
+Red-Footed Falcon,3070,EE
+Red-Rumped Swallow,9950,NULL
+Red-Throated Pipit,10120,NULL
+Red-flanked Bluetail,11130,NULL
+Redwing,12010,BV; CC
+Reed Bunting,18770,NULL
+Reed Warbler,12510,NULL
+Richard's Pipit,10020,BV
+Ring Ouzel,11860,CX
+Ring destroyed or lost,99999,31P; 37P; 39P; 46P; 47P; 48P; 51P; 61P; 65P; 66P; 68P; 71P; 77P; 79P; 84P; 85P; B; BV; CC; CX; EE; FF; FS; GG; NULL; S; SS
+River Warbler,12370,NULL
+Robin,10990,NULL
+Rock Thrush,11620,CC
+Ruff,5170,BV; C; CX; D; DB; DK; SV; SX; XR; XS
+Rufous Nightingale,11040,B; NULL
+Rufous-Tailed Scrub Robin,10950,B
+Ruppell's Warbler,12690,NULL
+Rustic Bunting,18730,NULL
+Sand Martin,9810,0N; 18P; 21P; 27P; 46P; 4H; 4N; 51P; 60P; 68P; 7F; NULL
+Sandwich Tern,6110,DD
+Sardinian Warbler,12670,NULL
+Savi's Warbler,12380,NULL
+Scopoli's Shearwater,360,FF; FS; FV; SS
+Cory's Shearwater,360,FF; FS; FV; SS
+Sedge Warbler,12430,NULL
+Semi-Collared Flycatcher,13470,NULL
+Short Eared Owl,7680,GG
+Short-Toed Lark,9680,NULL
+Siberian Rubythroat,11050,NULL
+Siskin,16540,21P; 2N; 40P; 47P; 51P; 60P; 62P; 66P; 69P; B; NULL
+Sky Lark,9760,B
+Slender Billed Gull,5850,EE
+Song Thrush,12000,CC
+Spanish Sparrow,15920,B; BS
+Spectacled Warbler,12640,11P; 15P; 16P; 17P; 18P; 1F; 1H; 1P; 20P; 21P; 24P; 29P; 2B; 2F; 2N; 31P; 36P; 4N; 51P; 5B; 62P; 63P; 65P; 66P; 6N; 6P; 76P; 7F; 8F; 8N; 8P; 9B; 9H; 9N; NULL
+Spoonbill,1440,NULL
+Spotless Starling,15830,CX
+Spotted Crake,4080,C; D; DB; DD; DK; SX
+Spotted Flycatcher,13350,NULL; KC
+Spotted Redshank,5450,DD
+Squacco Heron,1080,EE
+Stone Curlew,4590,EE
+Subalpine Warbler,12650,NULL
+Tawny Pipit,10050,B; NULL
+Teal,1840,EE
+Temminck's Stint,5020,S
+Thrush Nightingale,11030,B
+Tree Pipit,10090,KP; NULL
+Tree Sparrow,15980,B; NULL
+Trumpeter Finch,16760,B
+Turnstone,5610,C; SV
+Turtle Dove,6870,DD; EE
+Water Pipit,10140,NULL; S
+Water Rail,4070,BB; D; DB; DD; DK; DN; EE; NULL
+Western Bonelli's Warbler,13071,13P; 15P; 16P; 17P; 18P; 1P; 21P; 22P; 24P; 27P; 30P; 31P; 32P; 33P; 34P; 37P; 38P; 3F; 3H; 3P; 42P; 47P; 4H; 4N; 50P; 51P; 54P; 5E; 5F; 5H; 5P; 60P; 61P; 65P; 68P; 69P; 6N; 72P; 7H; 8F; 8H; 9E; 9F; NULL
+Western Olivaceous Warbler,12552,NULL
+Western Orphean Warbler,12720,B; NULL
+Western/Eastern Olivaceous Warbler,12609,NULL
+Whinchat,11370,NULL
+White Stork,1340,L
+White Wagtail,10200,NULL
+Willow Warbler,13120,A; KA; KB; KC; KP; 0H; 0N; 10P; 11P; 12P; 13P; 14P; 15P; 16P; 17P; 18P; 19P; 1E; 1F; 1H; 15H; 1N; 1P; 20P; 21P; 22P; 23P; 24P; 25P; 26P; 27P; 28P; 29P; 2B; 2F; 2H; 2N; 2P; 30P; 31P; 32P; 33P; 34P; 35P; 36P; 37P; 38P; 39P; 3B; 3F; 3H; 3N; 3P; 40P; 41P; 42P; 43P; 44P; 45P; 46P; 47P; 48P; 49P; 4F; 4H; 4N; 4P; 50P; 51P; 52P; 53P; 54P; 5B; 5E; 5F; 5H; 5N; 5P; 60P; 61P; 62P; 63P; 64P; 65P; 66P; 67P; 68P; 69P; 6F; 6H; 6M; 6N; 6P; 70P; 71P; 72P; 73P; 74P; 75P; 76P; 77P; 78P; 79P; 7F; 7H; 7N; 7P; 82P; 84P; 85P; 87P; 88P; 8F; 8H; 8N; 8P; 9A; 9B; 9E; 9F; 9H; 9N; 9P; NULL
+Wood Sandpiper,5540,BV
+Wood Warbler,13080,0H; 0N; 10N; 10P; 11P; 13P; 14P; 15P; 16P; 17P; 18P; 19P; 1B; 1F; 1H; 1N; 1P; 20P; 21P; 22P; 23P; 24P; 25P; 26P; 27P; 28P; 29P; 2B; 2F; 2H; 2N; 2P; 30P; 31P; 32P; 33P; 34P; 35P; 36P; 37P; 38P; 39P; 3B; 3F; 3N; 3P; 40P; 41P; 42P; 43P; 44P; 45P; 46P; 47P; 48P; 49P; 4F; 4H; 4N; 4P; 50P; 51P; 52P; 53P; 54P; 5B; 5E; 5F; 5H; 5N; 5P; 60P; 61P; 62P; 63P; 64P; 65P; 66P; 67P; 68P; 69P; 6F; 6H; 6N; 6P; 70P; 71P; 72P; 73P; 75P; 76P; 77P; 78P; 79P; 7F; 7H; 7N; 7P; 82P; 84P; 85P; 87P; 88P; 8B; 8F; 8H; 8N; 8P; 9B; 9E; 9F; 9H; 9N; 9P; B; NULL; ON; S
+Woodchat Shrike,15230,B; BV
+Woodcock,5290,EE
+Wren,10660,38P
+Wryneck,8480,B
+Yelkouan Shearwater,462,EE; FF
+Yellow Wagtail,10170,NULL
+Yellow-browed Warbler,13000,0H; 10P; 11P; 13P; 15P; 16P; 17P; 18P; 1H; 1P; 20P; 21P; 22P; 23P; 24P; 25P; 26P; 27P; 28P; 29P; 2P; 30P; 31P; 32P; 33P; 34P; 35P; 36P; 37P; 38P; 39P; 3B; 3P; 40P; 41P; 42P; 43P; 44P; 45P; 46P; 47P; 48P; 49P; 4F; 4P; 50P; 51P; 53P; 5H; 5N; 5P; 60P; 61P; 62P; 63P; 64P; 65P; 66P; 67P; 68P; 69P; 6H; 70P; 71P; 72P; 75P; 76P; 77P; 7H; 84P; 87P; 8F; 8P; 9H
+Yellow-legged Gull,5926,GG
+Yellowhammer,18570,B
+Zitting Cisticola,12260,0H; 0N; 10P; 11P; 12P; 13P; 14P; 15P; 16P; 17P; 19P; 1E; 1F; 1H; 1N; 20P; 21P; 22P; 23P; 24P; 25P; 26P; 27P; 28P; 29P; 2B; 2F; 2H; 2N; 2P; 30P; 31P; 32P; 33P; 34P; 35P; 36P; 37P; 38P; 39P; 3B; 3F; 3H; 3N; 3P; 40P; 41P; 42P; 43P; 44P; 45P; 46P; 47P; 48P; 49P; 4F; 4H; 4N; 4P; 50P; 51P; 52P; 53P; 54P; 5B; 5E; 5F; 5H; 5N; 5P; 60P; 61P; 62P; 63P; 64P; 65P; 66P; 67P; 68P; 69P; 6F; 6H; 6N; 6P; 70P; 71P; 72P; 73P; 75P; 76P; 77P; 78P; 79P; 7E; 7F; 7H; 7N; 7P; 84P; 87P; 88P; 8E; 8F; 8H; 8N; 8P; 9B; 9E; 9F; 9H; 9N; 9P; NULL; ON
