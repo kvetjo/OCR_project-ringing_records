@@ -1,4 +1,4 @@
-# OCR Universal Project – Documentation
+# OCR project - ringing records – Documentation
 
 This project turns **scanned paper bird records** into structured data. It handles ringing sheets, retrap cards and daily sightings sheets.
 
